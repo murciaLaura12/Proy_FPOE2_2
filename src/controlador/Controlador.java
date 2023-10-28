@@ -4,12 +4,30 @@
  */
 package controlador;
 
+import modelo.Modelo;
+import vista.MenuVista;
+
 /**
  *
  * @author LEONARDO
  */
 public class Controlador {
     
+   private MenuVista menu;
+   private Modelo modelo;
+   
+   public Controlador (Modelo modelo, MenuVista menu){
+   
+        this.modelo = modelo;
+        this.menu = menu;
+        
+        menu.setVisible(true);
+        
+   
+   };
+   
+   
+   
     
     
 }

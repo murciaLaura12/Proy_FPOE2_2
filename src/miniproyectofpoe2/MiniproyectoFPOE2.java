@@ -4,6 +4,8 @@
  */
 package miniproyectofpoe2;
 
+import vista.MenuVista;
+
 /**
  *
  * @author LAURA
@@ -15,6 +17,10 @@ public class MiniproyectoFPOE2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        MenuVista menu = new MenuVista();
+        
+        
     }
     
 }

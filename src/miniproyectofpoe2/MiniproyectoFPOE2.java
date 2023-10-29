@@ -4,6 +4,7 @@
  */
 package miniproyectofpoe2;
 
+import modelo.Modelo;
 import vista.MenuVista;
 
 /**
@@ -20,6 +21,7 @@ public class MiniproyectoFPOE2 {
         
         MenuVista menu = new MenuVista();
         
+        Modelo modelo = new Modelo();
         
     }
     

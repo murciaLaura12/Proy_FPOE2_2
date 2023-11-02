@@ -18,6 +18,6 @@ public class ControladorSirvevista {
         this.sirveVista = sirveVista;
         
         sirveVista.setVisible(true);
+        }
+        
     }
-    
-}

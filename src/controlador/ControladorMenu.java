@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import modelo.Modelo;
+import vista.ComoJugarVista;
 import vista.MenuVista;
 import vista.SirveVista;
 
@@ -47,7 +48,9 @@ public class ControladorMenu {
         
 
 
-        ClaseMenu.IrAInstrucciones(new SirveListener());
+        ClaseMenu.IrASirve(new SirveListener());
+        ClaseMenu.IrAComoJugar(new ComoJugarListener());
+        ClasePlay.
         
    
 
@@ -57,24 +60,45 @@ public class ControladorMenu {
    public void changeImage(){
        this.src = "/Imagenes/FondoJuego/Sirve.jpeg";
        mImagen = new Background2(ClaseMenu.getPPal(), src);
-       /*ClaseMenu.getPPal().add(mImagen).repaint();*/
+       ClaseMenu.getPPal().add(mImagen).repaint();
 
        
    }
 
    
     class SirveListener implements ActionListener{
-        
-                
+                    
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
             ControladorSirvevista controladorSirvevista = new ControladorSirvevista(new SirveVista());
-            ClaseMenu.setVisible(false);
+            
          }
 
 
+    }
+    
+    class ComoJugarListener implements ActionListener{
+          
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            ControladorComoJugarVista controladorComojugarvista = new ControladorComoJugarVista(new ComoJugarVista());
+         }
+
+
+    }
+    
+    class PlayListener implements ActionListener{
+        
+                
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            ControladorComoJugarVista controladorComojugarvista = new ControladorComoJugarVista(new ComoJugarVista());
+         }
     }
     
 

@@ -40,6 +40,7 @@ public class SirveVista extends javax.swing.JFrame {
         jLabel1.setBounds(0, 0, 670, 450);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

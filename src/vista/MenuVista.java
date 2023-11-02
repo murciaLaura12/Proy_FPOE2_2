@@ -14,9 +14,8 @@ import javax.swing.JPanel;
  */
 public class MenuVista extends javax.swing.JFrame {
 
-
-    public JButton getBtnInstrucciones() {
-        return BtnInstrucciones;
+    public JButton getBtnComoJugar() {
+        return BtnComoJugar;
     }
 
     public JButton getBtnPlay() {
@@ -32,18 +31,14 @@ public class MenuVista extends javax.swing.JFrame {
         return PPal;
     }
 
-    public void setBtnInstrucciones(JButton BtnInstrucciones) {
-        this.BtnInstrucciones = BtnInstrucciones;
+    public void setBtnComoJugar(JButton BtnComoJugar) {
+        this.BtnComoJugar = BtnComoJugar;
     }
 
     public void setBtnPlay(JButton BtnPlay) {
         this.BtnPlay = BtnPlay;
     }
   
-    public void setBtnSiguiente(JButton BtnSiguiente) {
-        this.BtnSiguiente = BtnSiguiente;
-    }
-
     public void setBtnSirve(JButton BtnSirve) {
         this.BtnSirve = BtnSirve;
     }
@@ -52,10 +47,20 @@ public class MenuVista extends javax.swing.JFrame {
         this.PPal = PPal;
     }
 
-    public void IrAInstrucciones(ActionListener listener){
+    public void IrASirve(ActionListener listener){
         getBtnSirve().addActionListener(listener);
         
-    }    
+    }   
+    
+    public void IrAComoJugar(ActionListener listener){
+        getBtnComoJugar().addActionListener(listener);
+        
+    } 
+    
+    public void IrAPlay(ActionListener listener){
+        getBtnPlay().addActionListener(listener);
+        
+    } 
 
     /**
      * Creates new form Menu
@@ -74,9 +79,8 @@ public class MenuVista extends javax.swing.JFrame {
     private void initComponents() {
 
         PPal = new javax.swing.JPanel();
-        BtnInstrucciones = new javax.swing.JButton();
+        BtnComoJugar = new javax.swing.JButton();
         BtnPlay = new javax.swing.JButton();
-        BtnSiguiente = new javax.swing.JButton();
         BtnSirve = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,15 +90,15 @@ public class MenuVista extends javax.swing.JFrame {
         PPal.setPreferredSize(new java.awt.Dimension(668, 445));
         PPal.setLayout(null);
 
-        BtnInstrucciones.setContentAreaFilled(false);
-        BtnInstrucciones.setFocusable(false);
-        BtnInstrucciones.addActionListener(new java.awt.event.ActionListener() {
+        BtnComoJugar.setContentAreaFilled(false);
+        BtnComoJugar.setFocusable(false);
+        BtnComoJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnInstruccionesActionPerformed(evt);
+                BtnComoJugarActionPerformed(evt);
             }
         });
-        PPal.add(BtnInstrucciones);
-        BtnInstrucciones.setBounds(20, 309, 139, 106);
+        PPal.add(BtnComoJugar);
+        BtnComoJugar.setBounds(20, 309, 139, 106);
 
         BtnPlay.setContentAreaFilled(false);
         BtnPlay.setFocusable(false);
@@ -105,17 +109,6 @@ public class MenuVista extends javax.swing.JFrame {
         });
         PPal.add(BtnPlay);
         BtnPlay.setBounds(189, 293, 258, 135);
-
-        BtnSiguiente.setText("Siguiente");
-        BtnSiguiente.setContentAreaFilled(false);
-        BtnSiguiente.setFocusable(false);
-        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSiguienteActionPerformed(evt);
-            }
-        });
-        PPal.add(BtnSiguiente);
-        BtnSiguiente.setBounds(456, 6, 206, 42);
 
         BtnSirve.setContentAreaFilled(false);
         BtnSirve.setFocusable(false);
@@ -141,6 +134,7 @@ public class MenuVista extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnSirveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSirveActionPerformed
@@ -151,13 +145,9 @@ public class MenuVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnPlayActionPerformed
 
-    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
+    private void BtnComoJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnComoJugarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnSiguienteActionPerformed
-
-    private void BtnInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInstruccionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnInstruccionesActionPerformed
+    }//GEN-LAST:event_BtnComoJugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,10 +186,10 @@ public class MenuVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnInstrucciones;
+    private javax.swing.JButton BtnComoJugar;
     private javax.swing.JButton BtnPlay;
-    private javax.swing.JButton BtnSiguiente;
     private javax.swing.JButton BtnSirve;
     private javax.swing.JPanel PPal;
     // End of variables declaration//GEN-END:variables
+
 }

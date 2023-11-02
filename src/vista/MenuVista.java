@@ -14,9 +14,6 @@ import javax.swing.JPanel;
  */
 public class MenuVista extends javax.swing.JFrame {
 
-    public JButton getBtnAnterior() {
-        return BtnAnterior;
-    }
 
     public JButton getBtnInstrucciones() {
         return BtnInstrucciones;
@@ -26,13 +23,6 @@ public class MenuVista extends javax.swing.JFrame {
         return BtnPlay;
     }
 
-    public JButton getBtnSalir() {
-        return BtnSalir;
-    }
-
-    public JButton getBtnSiguiente() {
-        return BtnSiguiente;
-    }
 
     public JButton getBtnSirve() {
         return BtnSirve;
@@ -42,10 +32,6 @@ public class MenuVista extends javax.swing.JFrame {
         return PPal;
     }
 
-    public void setBtnAnterior(JButton BtnAnterior) {
-        this.BtnAnterior = BtnAnterior;
-    }
-
     public void setBtnInstrucciones(JButton BtnInstrucciones) {
         this.BtnInstrucciones = BtnInstrucciones;
     }
@@ -53,11 +39,7 @@ public class MenuVista extends javax.swing.JFrame {
     public void setBtnPlay(JButton BtnPlay) {
         this.BtnPlay = BtnPlay;
     }
-
-    public void setBtnSalir(JButton BtnSalir) {
-        this.BtnSalir = BtnSalir;
-    }
-
+  
     public void setBtnSiguiente(JButton BtnSiguiente) {
         this.BtnSiguiente = BtnSiguiente;
     }
@@ -70,7 +52,10 @@ public class MenuVista extends javax.swing.JFrame {
         this.PPal = PPal;
     }
 
-    
+    public void IrAInstrucciones(ActionListener listener){
+        getBtnSirve().addActionListener(listener);
+        
+    }    
 
     /**
      * Creates new form Menu
@@ -91,9 +76,7 @@ public class MenuVista extends javax.swing.JFrame {
         PPal = new javax.swing.JPanel();
         BtnInstrucciones = new javax.swing.JButton();
         BtnPlay = new javax.swing.JButton();
-        BtnAnterior = new javax.swing.JButton();
         BtnSiguiente = new javax.swing.JButton();
-        BtnSalir = new javax.swing.JButton();
         BtnSirve = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,6 +84,7 @@ public class MenuVista extends javax.swing.JFrame {
 
         PPal.setFocusable(false);
         PPal.setPreferredSize(new java.awt.Dimension(668, 445));
+        PPal.setLayout(null);
 
         BtnInstrucciones.setContentAreaFilled(false);
         BtnInstrucciones.setFocusable(false);
@@ -109,6 +93,8 @@ public class MenuVista extends javax.swing.JFrame {
                 BtnInstruccionesActionPerformed(evt);
             }
         });
+        PPal.add(BtnInstrucciones);
+        BtnInstrucciones.setBounds(20, 309, 139, 106);
 
         BtnPlay.setContentAreaFilled(false);
         BtnPlay.setFocusable(false);
@@ -117,15 +103,8 @@ public class MenuVista extends javax.swing.JFrame {
                 BtnPlayActionPerformed(evt);
             }
         });
-
-        BtnAnterior.setText("Anterior");
-        BtnAnterior.setContentAreaFilled(false);
-        BtnAnterior.setFocusable(false);
-        BtnAnterior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAnteriorActionPerformed(evt);
-            }
-        });
+        PPal.add(BtnPlay);
+        BtnPlay.setBounds(189, 293, 258, 135);
 
         BtnSiguiente.setText("Siguiente");
         BtnSiguiente.setContentAreaFilled(false);
@@ -135,16 +114,8 @@ public class MenuVista extends javax.swing.JFrame {
                 BtnSiguienteActionPerformed(evt);
             }
         });
-
-        BtnSalir.setText("Salir");
-        BtnSalir.setContentAreaFilled(false);
-        BtnSalir.setFocusable(false);
-        BtnSalir.setPreferredSize(new java.awt.Dimension(50, 50));
-        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSalirActionPerformed(evt);
-            }
-        });
+        PPal.add(BtnSiguiente);
+        BtnSiguiente.setBounds(456, 6, 206, 42);
 
         BtnSirve.setContentAreaFilled(false);
         BtnSirve.setFocusable(false);
@@ -153,50 +124,8 @@ public class MenuVista extends javax.swing.JFrame {
                 BtnSirveActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout PPalLayout = new javax.swing.GroupLayout(PPal);
-        PPal.setLayout(PPalLayout);
-        PPalLayout.setHorizontalGroup(
-            PPalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PPalLayout.createSequentialGroup()
-                .addGroup(PPalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PPalLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PPalLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(BtnInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(BtnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BtnSirve, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PPalLayout.createSequentialGroup()
-                        .addComponent(BtnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(249, 249, 249)
-                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        PPalLayout.setVerticalGroup(
-            PPalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PPalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addGroup(PPalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                .addGroup(PPalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PPalLayout.createSequentialGroup()
-                        .addComponent(BtnInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13))
-                    .addComponent(BtnPlay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PPalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnSirve, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
+        PPal.add(BtnSirve);
+        BtnSirve.setBounds(453, 316, 207, 105);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,14 +154,6 @@ public class MenuVista extends javax.swing.JFrame {
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnSiguienteActionPerformed
-
-    private void BtnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnteriorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnAnteriorActionPerformed
-
-    private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnSalirActionPerformed
 
     private void BtnInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInstruccionesActionPerformed
         // TODO add your handling code here:
@@ -275,20 +196,10 @@ public class MenuVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAnterior;
     private javax.swing.JButton BtnInstrucciones;
     private javax.swing.JButton BtnPlay;
-    private javax.swing.JButton BtnSalir;
     private javax.swing.JButton BtnSiguiente;
     private javax.swing.JButton BtnSirve;
     private javax.swing.JPanel PPal;
     // End of variables declaration//GEN-END:variables
-
-    public void setBorder(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setOpaque(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

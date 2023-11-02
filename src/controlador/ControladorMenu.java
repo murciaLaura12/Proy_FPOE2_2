@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import modelo.Modelo;
 import vista.MenuVista;
+import vista.SirveVista;
 
 /**
  *
@@ -24,35 +25,57 @@ public class ControladorMenu {
     
    private MenuVista ClaseMenu;
    private Modelo modelo;
+   private String src;
+   private Background2 mImagen;
    
    public ControladorMenu (Modelo modelo, MenuVista ClaseMenu){
    
         this.modelo = modelo;
         this.ClaseMenu = ClaseMenu;
+        this.src = "/Imagenes/FondoJuego/FondoMenu.jpg";
         
         
 
        
         ClaseMenu.setVisible(true);
        
-        Background2 mImagen = new Background2(ClaseMenu.getPPal(), "/Imagenes/FondoJuego/FondoMenu.jpg");
+        mImagen = new Background2(ClaseMenu.getPPal(), src);
         ClaseMenu.getPPal().add(mImagen).repaint();
         ClaseMenu.getPPal().setOpaque(false);
         ClaseMenu.getPPal().setBorder(null);
         ClaseMenu.getPPal().setBackground(new Color(0,0,0,0));
         
-        JButton Anterior = ClaseMenu.getBtnAnterior();
-        JButton Siguente = ClaseMenu.getBtnSiguiente();
-        
-        Anterior.setVisible(false);
-        Siguente.setVisible(false);
 
+
+        ClaseMenu.IrAInstrucciones(new SirveListener());
         
    
 
    };
 
+   
+   public void changeImage(){
+       this.src = "/Imagenes/FondoJuego/Sirve.jpeg";
+       mImagen = new Background2(ClaseMenu.getPPal(), src);
+       /*ClaseMenu.getPPal().add(mImagen).repaint();*/
 
+       
+   }
+
+   
+    class SirveListener implements ActionListener{
+        
+                
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            ControladorSirvevista controladorSirvevista = new ControladorSirvevista(new SirveVista());
+            ClaseMenu.setVisible(false);
+         }
+
+
+    }
     
 
     public class Background2 extends JLabel{
@@ -74,3 +97,4 @@ public class ControladorMenu {
         }
     }
 }
+

@@ -4,6 +4,7 @@
  */
 package miniproyectofpoe2;
 
+import controlador.ControladorMenu;
 import modelo.Modelo;
 import vista.MenuVista;
 
@@ -23,6 +24,8 @@ public class MiniproyectoFPOE2 {
         
         Modelo modelo = new Modelo();
         
+        ControladorMenu controlador = new ControladorMenu(modelo, menu);
+      
     }
     
 }
